@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@charset "UTF-8";
+@font-face {
+   font-family:Makinas;
+   font-style: normal;
+   font-weight: normal;
+   src: url(./font/Makinas-Scrap-5.otf) format('truetype');
+ }
+.font-Makinas{ font-family: "Makinas"; }
+.font-Meiryo{ font-family: "Meiryo", sans-serif; }
+body{
+    margin: 0;
+    padding: 0;
+}
+canvas{
+    position:fixed;
+}
+.content{
+    position: relative;
+}
+.icon{
+    float: right;
+    padding-top: 1em;
+    padding-right: 0.5em;
+    max-width: 3.2em;
+}
+.drop-shadow{
+    filter: drop-shadow(0 0 0.25rem black);
+}
+.white-bloom{
+    filter: drop-shadow(0 0 0.25rem white);
+}
+.bg-stripe-gray{
+    background-color: transparent;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #aaaaaa), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #aaaaaa),color-stop(.75, #aaaaaa), color-stop(.75, transparent),to(transparent));
+    -webkit-background-size: 14px 14px;
+}
+.bg-stripe-blue{
+    background-color: transparent;
+    background-image: -webkit-gradient(linear, 0 0, 100% 100%,color-stop(.25, #00b0ff), color-stop(.25, transparent),color-stop(.5, transparent), color-stop(.5, #00b0ff),color-stop(.75, #00b0ff), color-stop(.75, transparent),to(transparent));
+    -webkit-background-size: 14px 14px;
+}
+.bg-doted-gray{
+	background-color: transparent;
+	background-image: radial-gradient(#aaaaaa 1px, transparent 1px);
+	background-size: 6px 6px;
+}
+input[type="button"],input[type="text"],input[type="submit"],input[type="image"],textarea{
+    -webkit-appearance: none;
+    border-radius: 0;
+ }

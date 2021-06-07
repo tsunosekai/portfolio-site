@@ -1,0 +1,13 @@
+{
+  "name": "tsuno.co",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tailwind build ./style/raw.css -o ./public/style.css -c ./tailwind.config.js",
+    "purge": "purgecss --output ./public/ --config ./postcss.config.js"
+  },
+  "dependencies": {
+    "purgecss": "^2.1.0",
+    "tailwindcss": "^1.2.0"
+  }
+}

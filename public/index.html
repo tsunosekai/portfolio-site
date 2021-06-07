@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <link href="./style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+  
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="script/three/GLTFLoader.js"></script>
+  <script src="script/three/OrbitControls.js"></script>
+  
+  <script src="script/3dscene/scene-3d.js"></script>
+  <script src="script/3dscene/background-3d.js"></script>
+  <script src="script/3dscene/meisi-3d.js"></script>
+  <script src="./script/script.js"></script>
+  
+  <title>tsuno.co</title>
+</head>
+<body>
+  <canvas id="background-3d"></canvas>
+  <div id="content" class="content text-white text-sm md:text-base font-Makinas">
+
+    <div class="container mx-auto">
+      <div class="p-2 pb-1 select-none">
+        <div class="grid grid-cols-1 md:grid-cols-7 bg-transparent-gray p-5">
+          <div  class="col-span-1 md:col-span-3 relative">
+            <div>
+              <img class="h-2 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 mb-0 lg:mb-6" src="./svg/+_white.svg">
+            </div>
+            <div class="grid grid-cols-3 w-full">
+              <div class="col-span-1 sm:col-span-2 md:col-span-1 relative pt-5 pb-5">
+                <div class="w-10 h-full bg-stripe-blue"></div>
+              </div>
+              <div class="col-span-2 sm:col-span-1 md:col-span-2 p-5 md:p-2 lg:p-10 pb-5 lg:pb-10">
+                <img class="w-full drop-shadow" src="./svg/tsuno.co_logo.svg">
+                <img class="h-2 float-right ml-3" src="./svg/+_white.svg">
+                <img class="h-2 float-right ml-3" src="./svg/+_white.svg">
+                <img class="h-2 float-right ml-3" src="./svg/+_white.svg">
+              </div>
+            </div>
+            <div class="w-full overflow-hidden">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+            </div>
+            <div class="w-full overflow-hidden">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+            </div>
+            <div class="w-full overflow-hidden">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+              <img class="h-2 float-left mr-3 mb-3 hidden lg:block" src="./svg/+_white.svg">
+            </div>
+            <div class="hidden lg:block absolute bottom-0">
+              <img class="h-2 mt-20" src="./svg/+_white.svg">
+              <img class="h-2 mt-3" src="./svg/+_white.svg">
+            </div>
+          </div>
+          <div class="col-span-1 md:col-span-4 relative h-80 lg:h-112 -m-5 md:ml-0">
+            <canvas id="meisi-3d" class="relative drop-shadow"></canvas>
+            <div class="col-span-1 top-0 right-0 absolute p-5 hidden lg:block">
+              <img class="h-2 mb-3" src="./svg/+_white.svg">
+              <img class="h-2 mb-3" src="./svg/+_white.svg">
+            </div>
+            <div class="col-span-1 bottom-0 right-0 absolute p-5">
+              <img class="h-2 mt-3" src="./svg/+_white.svg">
+              <img class="h-2 mt-3" src="./svg/+_white.svg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 pt-0 pb-0">
+        <div class="flex justify-around grid grid-cols-5 text-center text-xl">
+          <a id="top_tab" class="tab cursor-pointer col-span-1 bg-transparent-gray border-l-4 md:border-l-8 border-blue mb-1">TOP</a>
+          <a id="illust_tab" class="tab cursor-pointer col-span-1 bg-transparent-gray mb-1">ILLUST</a>
+          <a id="3dcg_tab" class="tab cursor-pointer col-span-1 bg-transparent-gray mb-1">3DCG</a>
+          <a id="web_tab" class="tab cursor-pointer col-span-1 bg-transparent-gray mb-1">WEB</a>
+          <a id="game_tab" class="tab cursor-pointer col-span-1 bg-transparent-gray mb-1">GAME</a>
+        </div>
+      </div>
+
+      <div id="top" class="hidden page p-2 pt-0 pb-1 font-Meiryo">
+        <div class="bg-transparent-gray pt-10 pb-5 border-l-4 md:border-l-8 border-blue">
+
+          <div class="float-right -mt-5">
+            <a href="https://twitter.com/tsunosekai">twitter</a>
+            <div class="h-1 w-32 bg-blue"></div>
+            <a href="http://blog.tsuno.co">blog</a>
+            <div class="h-1 w-32 bg-blue"></div>
+            <a href="https://www.pixiv.net/users/14902116">pixiv</a>
+            <div class="h-1 w-32 bg-blue"></div>
+          </div>
+
+          <div class="pt-8 md:pt-0"></div>
+          
+          <div class="inline-block">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">自己紹介</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+          <div class="m-4 md:m-8">
+            <p>フリーランスクリエイター + インディーズゲームクリエーター.</p>
+            <p>フリーランスとして活動しつつ, オリジナルゲームの製作を行っています.</p>
+          </div>
+
+          <h3 class="font-Makinas text-xl bg-gray border-l-4 m-2 md:ml-4  inline-block pl-5 pr-5">
+            スキル
+          </h3>
+          <div class="m-4 md:m-8 md:mt-2 md:mb-2 ">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+
+              <div class="flex pb-4">
+                <div>
+                  <img class="w-20 object-center drop-shadow" src="./svg/illust.svg">
+                </div>
+                <div class="pl-5">
+                  <h3 class="font-Makinas text-xl">
+                    ILLUST
+                  </h3>
+                  <div class="text-xs md:text-sm opacity-75 p-2"> 
+                    <p>キャラクター/背景</p>
+                    <p>SAI/Photoshop ..</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex pb-4">
+                <div>
+                  <img class="w-20 object-center drop-shadow" src="./svg/3dcg.svg">
+                </div>
+                <div class="pl-5">
+                  <h3 class="font-Makinas text-xl">
+                    3DCG
+                  </h3>
+                  <div class="text-xs md:text-sm opacity-75 p-2"> 
+                    <p>キャラクター/背景</p>
+                    <p>Blender/Substance ..</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex pb-4">
+                <div>
+                  <img class="w-20 object-center drop-shadow" src="./svg/web.svg">
+                </div>
+                <div class="pl-5">
+                  <h3 class="font-Makinas text-xl">
+                    WEB
+                  </h3>
+                  <div class="text-xs md:text-sm opacity-75 p-2"> 
+                    <p>デザイン/コーディング/サーバー</p>
+                    <p>html/css/js/node.js/Wordpress ..</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="flex pb-4">
+                <div>
+                  <img class="w-20 object-center drop-shadow" src="./svg/game.svg">
+                </div>
+                <div class="pl-5">
+                  <h3 class="font-Makinas text-xl">
+                    GAME
+                  </h3>
+                  <div class="text-xs md:text-sm opacity-75 p-2"> 
+                    <p>Unity(C#), C++ ..</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <h3 class="font-Makinas text-xl bg-gray border-l-4 m-2 md:ml-4 inline-block pl-3 pr-5">
+            来歴
+          </h3>
+          <div class="m-4 md:m-8">
+            <table class="table-fixed mt-4 mb-4 w-full">
+              <tr>
+                <td class="w-1/4">2018.4 - 2020.3</td>
+                <td class="w-3/4">株式会社コーエーテクモゲームス勤務　<span class="inline-block">プログラマー</span></td>
+              </tr>
+              <tr>
+                <td class="w-1/4">2020.4 -</td>
+                <td class="w-3/4">フリーランスクリエイター + <span class="inline-block">インディーズゲームクリエイター</span></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="inline-block ">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">お問合せ</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+          <div class="m-4 md:m-8">
+            <form id="form" action="https://docs.google.com/forms/u/1/d/e/1FAIpQLSeYZx2zQAzvigZmniGmveaGsc3zlgiigXeAWIqqMxKYewVufQ/formResponse" method="POST"  target="hidden_iframe" onsubmit="submitted=true;">
+              <table class="table-auto mt-4 mb-4 w-full">
+                <tr>
+                  <td class="align-top">名前</td>
+                  <td>
+                    <input name="entry.1410079106" class="w-full bg-transparent-gray border-r-2" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-top">メール</td>
+                  <td>
+                    <input name="entry.703543454" class="w-full bg-transparent-gray border-r-2" type="email">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-top">題名</td>
+                  <td>
+                    <input name="entry.716889634" class="w-full bg-transparent-gray border-r-2" type="text">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="align-top">本文</td>
+                  <td>
+                    <textarea name="entry.1602284693" class="w-full bg-transparent-gray border-r-2" name="" id="" cols="30" rows="10"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td id="thanks" class="hidden text-blue">お問合せありがとうございました。</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input class="float-right bg-transparent-gray p-0 pr-4 pl-4 border-r-2 cursor-pointer" type="submit" name="" value="送信"></td>
+                </tr>
+              </table>
+              <script type="text/javascript">var submitted=false;</script>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){onSubmitted();}"></iframe>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="illust" class="hidden page p-2 pt-0 pb-1 font-Meiryo">
+        <div class="bg-transparent-gray pt-10 pb-5 border-l-4 md:border-l-8 border-blue">
+
+          <div class="inline-block">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">イラスト</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <p>キャラクター・背景イラストなどを描いています.</p>
+            <p>現在お仕事募集中です.</p>
+          </div>
+
+          <div class="flex">
+            <div class="flex-col">
+              <a href="./works/illust/0009.jpg"><img class="w-full" src="./works/thumbnail/0009.jpg"></a>
+              <a href="./works/illust/0008.jpg"><img class="w-full" src="./works/thumbnail/0008.jpg"></a>
+              <a href="./works/illust/0007.jpg"><img class="w-full" src="./works/thumbnail/0007.jpg"></a>
+            </div>
+            <div class="flex-col">
+              <a href="./works/illust/0006.jpg"><img class="w-full" src="./works/thumbnail/0006.jpg"></a>
+              <a href="./works/illust/0005.jpg"><img class="w-full" src="./works/thumbnail/0005.jpg"></a>
+              <a href="./works/illust/0004.jpg"><img class="w-full" src="./works/thumbnail/0004.jpg"></a>
+            </div>
+            <div class="flex-col">
+              <a href="./works/illust/0003.jpg"><img class="w-full" src="./works/thumbnail/0003.jpg"></a>
+              <a href="./works/illust/0002.jpg"><img class="w-full" src="./works/thumbnail/0002.jpg"></a>
+              <a href="./works/illust/0001.jpg"><img class="w-full" src="./works/thumbnail/0001.jpg"></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="3dcg" class="hidden page p-2 pt-0 pb-1 font-Meiryo">
+        <div class="bg-transparent-gray pt-10 pb-5 border-l-4 md:border-l-8 border-blue">
+
+          <div class="inline-block">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">3DCG</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <p>準備中...</p>
+            <p>（とりあえず昔のツイートを載せておきます.）</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 m-4 md:m-8">
+            <div class="col-span-1">
+              <blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">マザイナーで服作成<br>マーベラスデザイナー知らない人もいるかなと思ったので一発でどんなソフトかわかるスクショ <a href="https://t.co/LbJMNVObIe">pic.twitter.com/LbJMNVObIe</a></p>&mdash; ツノ@お仕事募集中 (@tsunosekai) <a href="https://twitter.com/tsunosekai/status/1195375809973768192?ref_src=twsrc%5Etfw">November 15, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">SubstanceDesignerわかってきた！<br>パラメータで雨濡れも表現できるし、表面も細かい <a href="https://t.co/hI9th1np1H">pic.twitter.com/hI9th1np1H</a></p>&mdash; ツノ@お仕事募集中 (@tsunosekai) <a href="https://twitter.com/tsunosekai/status/882962622961733632?ref_src=twsrc%5Etfw">July 6, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <div class="col-span-1">
+              <blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">ジャケットのしわをスカルプトしてテクスチャに焼き込んで、ガスマスクやメカシューズも1からデザインして丁寧に塗って、後ろ姿にもこだわって…すごく頑張ったんですよ！！ <a href="https://t.co/LPaG9riL8q">pic.twitter.com/LPaG9riL8q</a></p>&mdash; ツノ@お仕事募集中 (@tsunosekai) <a href="https://twitter.com/tsunosekai/status/930123649033519104?ref_src=twsrc%5Etfw">November 13, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote class="twitter-tweet tw-align-center"><p lang="ja" dir="ltr">substance painterで塗った貯水タンク <a href="https://t.co/7zVXbl68WJ">pic.twitter.com/7zVXbl68WJ</a></p>&mdash; ツノ@お仕事募集中 (@tsunosekai) <a href="https://twitter.com/tsunosekai/status/913323517537509376?ref_src=twsrc%5Etfw">September 28, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              <blockquote class="twitter-tweet tw-align-center"><p lang="und" dir="ltr"><a href="https://t.co/in1iTRREb2">pic.twitter.com/in1iTRREb2</a></p>&mdash; ツノ@お仕事募集中 (@tsunosekai) <a href="https://twitter.com/tsunosekai/status/899558041623842817?ref_src=twsrc%5Etfw">August 21, 2017</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="web" class="hidden page p-2 pt-0 pb-1 font-Meiryo">
+        <div class="bg-transparent-gray pt-10 pb-5 border-l-4 md:border-l-8 border-blue">
+
+          <div class="inline-block">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">WEB</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+
+          <div class="m-4 md:m-8">
+
+            <div class="m-4 md:m-8">
+              <p>サーバーの設定からデザイン、コーディングなどまでオールインワンで行えます.</p>
+              <p>全てお任せ、デザインの希望のみありなど柔軟に対応致します.</p>
+              <p>主にホームページを作成していますが、他案件についてもご相談ください.</p>
+              <p>現在お仕事募集中です.</p>
+            </div>
+
+            <h3 class="font-Makinas text-xl bg-gray border-l-4 inline-block pl-3 pr-5">
+              過去に作成したサイト
+            </h3>
+            
+            <ul>
+              <li class="m-3 md:m-6">
+                <a class="text-blue underline" href="http://tsuno.co">tsuno.co</a>このホームページ (2020)
+              </li>
+              <li class="m-3 md:m-6">
+                <a class="text-blue underline" href="http://www.med.osaka-cu.ac.jp/humanpathology/">大阪市立大学 診断病理・病理病態学 HP</a> (2017)
+              </li>
+            </ul>
+
+            <h3 class="font-Makinas text-xl bg-gray border-l-4 inline-block pl-3 pr-5 mt-2">
+              SKILLS
+            </h3>
+
+            <div class="m-4 md:m-8">
+              <p>Client Side：HTML, CSS, Javascript(jQuery, React, Three.js など)</p>
+              <p>Server Side：Wordpress, Node.js(Express, Socket.io, MongoDB など), SQL など</p>
+              <p>Server Settings：CentOS, Nginx など</p>
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+
+      <div id="game" class="hidden page p-2 pt-0 pb-1 font-Meiryo">
+        <div class="bg-transparent-gray pt-10 pb-5 border-l-4 md:border-l-8 border-blue">
+
+          <div class="inline-block">
+            <h2 class="font-Makinas text-2xl md:text-4xl pl-10 text-blue inline-block drop-shadow">GAME</h2>
+            <div class="h-2 w-full bg-stripe-blue"></div>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <p>
+              インディーズゲームを制作中です.
+            </p>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <h3 class="font-Makinas text-xl bg-gray border-l-4 inline-block pl-3 pr-5">
+              制作中 その1
+            </h3>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <p><a  class="text-blue underline"  href="https://twitter.com/studio_thursday">スタジオ木曜日</a>にて制作中！</p>
+            <div class="p-4 md:p-8">
+              <img src="./works/eyecatch/meta.png">
+            </div>
+          </div>
+
+          <div class="m-4 md:m-8">
+            <h3 class="font-Makinas text-xl bg-gray border-l-4 inline-block pl-3 pr-5">
+              制作中 その2
+            </h3>
+          </div>
+          
+          <div class="m-4 md:m-8">
+            <p>とあるチームで制作中...</p>
+            <div class="p-4 md:p-8">
+              <img src="./works/illust/0001.jpg">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="pr-2 pl-2 font-Meiryo">
+        <div class="bg-transparent-gray pt-2 pr-4 text-gray-400 text-sm text-right">
+            <span class="pl-3">ナイトモード</span>
+            <button id="night-mode" class="bg-transparent-gray p-0 pr-4 pl-4 border-r-2 cursor-pointer text-white">ON/OFF</button>
+            <span class="pl-3">コンテンツ</span>
+            <button id="contents-mode" class="bg-transparent-gray p-0 pr-4 pl-4 border-r-2 cursor-pointer text-white">ON/OFF</button>
+        </div>
+      </div>
+
+      <div class="pr-2 pl-2 font-Meiryo">
+        <div class="bg-transparent-gray pb-2 text-gray-400 text-center text-sm">
+          ©2020 ツノ
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
