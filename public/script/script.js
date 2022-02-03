@@ -1,8 +1,6 @@
 const main = async ()=>{
     initializeTabs();
 
-    initializeForms();
-
     let background3D = new Background3D('#background-3d');
     background3D.initialize();
 
@@ -41,6 +39,9 @@ const initializeTabs = ()=>{
                 break;
             case 'game_tab':
                 param = 'game';
+                break;
+            case 'shop_tab':
+                param = 'shop';
                 break;
         }
         // URL 書きかえ
@@ -86,42 +87,15 @@ const changeTabs = tab=>{
         case 'game':
             $('#game').removeClass('hidden');
             $('#game_tab').removeClass('mb-1')
+                .addClass('ml-1')
+                .addClass('mr-1');
+            break;
+        case 'shop':
+            $('#shop').removeClass('hidden');
+            $('#shop_tab').removeClass('mb-1')
                 .addClass('ml-1');
             break;
     }
-}
-
-// お問い合せフォーム初期化
-const initializeForms = ()=>{
-    $(()=>{
-        $("#form").validate({
-            rules: {
-                "entry.1410079106": {
-                    required: true
-                },
-                "entry.703543454": {
-                    required: true,
-                    email: true
-                },
-            },
-            messages: {
-                "entry.1410079106": {
-                    required: "※必須項目です."
-                },
-                "entry.703543454": {
-                    required: "※必須項目です."
-                },
-            },
-            submitHandler: function (form) {
-                form.submit();
-            }
-        });
-    });
-}
-
-// お問合せフォームの送信が押された後
-const onSubmitted = ()=>{
-    $('#thanks').removeClass('hidden');
 }
 
 $(main);
