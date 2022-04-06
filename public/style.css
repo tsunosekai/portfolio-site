@@ -539,6 +539,10 @@ video {
   float: left;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .h-1 {
   height: 0.25rem;
 }
